@@ -10,13 +10,27 @@
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
 
 
-    <link href="_content/LivingThing.Core.Frameworks.Client.Blazor.Library/mdi/css/materialdesignicons.css" rel="stylesheet" static />
-    <link href="_content/LivingThing.Core.Frameworks.Client.Blazor.Library/animate.css" rel="stylesheet" static />
-    <link href="_content/LivingThing.Core.Frameworks.Client.Blazor.Library/LivingThing.Core.Frameworks.Client.css" rel="stylesheet" static />
+    <link href="_content/LivingThing.Core.Frameworks.Client.Blazor/mdi/css/materialdesignicons.css" rel="stylesheet" static />
+    <link href="_content/LivingThing.Core.Frameworks.Client.Blazor/animate.css" rel="stylesheet" static />
+    <link href="_content/LivingThing.Core.Frameworks.Client.Blazor/LivingThing.Core.Frameworks.Client.css" rel="stylesheet" static />
     <!--<link href="/_content/LivingThing.SpinBot/css/LivingThing.SpinBot.css" rel="stylesheet" static />-->
     <script static>function Define(name, f) { window.lt = window.lt || {}; window.lt[name] = f; }</script>
-    <script src="_content/LivingThing.Core.Frameworks.Client.Blazor.Library/LivingThing.Core.Frameworks.Client.js" type="text/javascript" static></script>
+    <script src="_content/LivingThing.Core.Frameworks.Client.Blazor/LivingThing.Core.Frameworks.Client.js" type="text/javascript" static></script>
     <!--    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&amp;display=swap" rel="stylesheet" type="text/css">-->
+    <script>
+        function hook() {
+            var em = document.getElementById("len");
+            var txt = document.getElementById("txt");
+            if (em && txt) {
+                txt.addEventListener("keyup", function () {
+                    em.innerText = txt.value.length + "";
+                });
+            } else {
+                setTimeout(hook, 5000);
+            }
+        }
+        setTimeout(hook, 5000);
+    </script>
 </head>
 
 <body>
